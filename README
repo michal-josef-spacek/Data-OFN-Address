@@ -1,0 +1,63 @@
+NAME
+    Data::OFN::Address - Data object for catalog.
+
+SYNOPSIS
+     use Data::OFN::Address;
+
+     my $obj = Data::OFN::Address->new(%params);
+     # TODO
+
+METHODS
+  "new"
+     my $obj = Data::OFN::Address->new(%params);
+
+    Constructor.
+
+    *       "items"
+
+            Address item objects. Each item must be a Data::Catalog::Item
+            object. It's optional. Default value is [].
+
+    *       "name"
+
+            Address name. It's required.
+
+    Returns instance of object.
+
+  "TODO"
+    TODO
+
+EXAMPLE
+     use strict;
+     use warnings;
+
+     use Data::OFN::Address;
+
+     my $obj = Data::OFN::Address->new(
+     );
+
+     # Print out.
+     # print 'Name: '.$obj->name."\n";
+
+     # Output:
+     # TODO
+
+DEPENDENCIES
+    Mo, Mo::utils.
+
+REPOSITORY
+    <https://github.com/michal-josef-spacek/Data-Address>
+
+AUTHOR
+    Michal Josef Špaček <mailto:skim@cpan.org>
+
+    <http://skim.cz>
+
+LICENSE AND COPYRIGHT
+    © 2023 Michal Josef Špaček
+
+    BSD 2-Clause License
+
+VERSION
+    0.01
+
