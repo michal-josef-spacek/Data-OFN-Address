@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Mo qw(build default is);
-use Mo::utils qw(check_length check_number check_string_begin);
+use Mo::utils qw(check_array_object check_number check_string_begin);
 
 our $VERSION = 0.01;
 
@@ -38,6 +38,7 @@ has district => (
 );
 
 has district_name => (
+	default => [],
 	is => 'ro',
 );
 
@@ -71,6 +72,7 @@ has mop_name => (
 );
 
 has name => (
+	default => [],
 	is => 'ro',
 );
 
@@ -101,10 +103,12 @@ has street => (
 );
 
 has street_name => (
+	default => [],
 	is => 'ro',
 );
 
 has text => (
+	default => [],
 	is => 'ro',
 );
 
@@ -113,6 +117,7 @@ has vusc => (
 );
 
 has vusc_name => (
+	default => [],
 	is => 'ro',
 );
 
@@ -126,6 +131,22 @@ sub BUILD {
 
 	# Check address_place_code.
 	check_number($self, 'address_place_code');
+
+	# Check cadastral_area.
+	# XXX Check number after this string.
+	check_string_begin($self, 'cadastral_area',
+		'https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/');
+
+	# Check cadastral_area_name.
+	check_array_object($self, 'cadastral_area_name', 'Data::Text::Simple');
+
+	# Check district.
+	# XXX Check number after this string.
+	check_string_begin($self, 'district',
+		'https://linked.cuzk.cz/resource/ruian/okres/');
+
+	# Check district_name.
+	check_array_object($self, 'district_name', 'Data::Text::Simple');
 
 	# Check element_ruian.
 	# XXX Check number after this string.
@@ -142,10 +163,51 @@ sub BUILD {
 	check_string_begin($self, 'momc',
 		'https://linked.cuzk.cz/resource/ruian/momc/');
 
+	# Check momc_name.
+	check_array_object($self, 'momc_name', 'Data::Text::Simple');
+
+	# Check mop.
+	# XXX Check number after this string.
+	check_string_begin($self, 'mop',
+		'https://linked.cuzk.cz/resource/ruian/mop/');
+
+	# Check mop_name.
+	check_array_object($self, 'mop_name', 'Data::Text::Simple');
+
+	# Check municipality.
+	# XXX Check number after this string.
+	check_string_begin($self, 'municipality',
+		'https://linked.cuzk.cz/resource/ruian/obec/');
+
+	# Check municipality_name.
+	check_array_object($self, 'municipality_name', 'Data::Text::Simple');
+
+	# Check municipality_part.
+	# XXX Check number after this string.
+	check_string_begin($self, 'municipality_part',
+		'https://linked.cuzk.cz/resource/ruian/cast-obce/');
+
+	# Check municipality_part_name.
+	check_array_object($self, 'municipality_part_name', 'Data::Text::Simple');
+
+	# Check street.
+	# XXX Check number after this string.
+	check_string_begin($self, 'street',
+		'https://linked.cuzk.cz/resource/ruian/ulice/');
+
+	# Check street_name.
+	check_array_object($self, 'street_name', 'Data::Text::Simple');
+
+	# Check text.
+	check_array_object($self, 'text', 'Data::Text::Simple');
+
 	# Check vusc.
 	# XXX Check number after this string.
 	check_string_begin($self, 'vusc',
 		'https://linked.cuzk.cz/resource/ruian/vusc/');
+
+	# Check vusc_name.
+	check_array_object($self, 'vusc', 'Data::Text::Simple');
 
 	return;
 }
