@@ -54,6 +54,10 @@ has house_number_type => (
 	is => 'ro',
 );
 
+has id => (
+	is => 'ro',
+);
+
 has momc => (
 	is => 'ro',
 );
@@ -157,6 +161,9 @@ sub BUILD {
 	# XXX Check number after this string.
 	check_string_begin($self, 'district',
 		'https://linked.cuzk.cz/resource/ruian/okres/');
+
+	# Check id.
+	check_number($self, 'id');
 
 	# Check momc.
 	# XXX Check number after this string.
