@@ -292,7 +292,7 @@ L<Mo::utils>.
 
 =head1 REPOSITORY
 
-L<https://github.com/michal-josef-spacek/Data-Address>
+L<https://github.com/michal-josef-spacek/Data-OFN-Address>
 
 =head1 AUTHOR
 
