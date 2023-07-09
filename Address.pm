@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Mo qw(build default is);
-use Mo::utils qw(check_array_object check_number check_string_begin);
+use Mo::utils qw(check_array_object check_number check_regexp);
 
 our $VERSION = 0.01;
 
@@ -129,78 +129,68 @@ sub BUILD {
 	my $self = shift;
 
 	# Check address_place.
-	# XXX Check number after this string.
-	check_string_begin($self, 'address_place',
-		'https://linked.cuzk.cz/resource/ruian/adresni-misto/');
+	check_regexp($self, 'address_place',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/adresni-misto/\d+$});
 
 	# Check address_place_code.
 	check_number($self, 'address_place_code');
 
 	# Check cadastral_area.
-	# XXX Check number after this string.
-	check_string_begin($self, 'cadastral_area',
-		'https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/');
+	check_regexp($self, 'cadastral_area',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/katastralni-uzemi/\d+$});
 
 	# Check cadastral_area_name.
 	check_array_object($self, 'cadastral_area_name', 'Data::Text::Simple');
 
 	# Check district.
-	# XXX Check number after this string.
-	check_string_begin($self, 'district',
-		'https://linked.cuzk.cz/resource/ruian/okres/');
+	check_regexp($self, 'district',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+});
 
 	# Check district_name.
 	check_array_object($self, 'district_name', 'Data::Text::Simple');
 
 	# Check element_ruian.
-	# XXX Check number after this string.
-	check_string_begin($self, 'element_ruian',
-		'https://linked.cuzk.cz/resource/ruian/parcela/');
+	check_regexp($self, 'element_ruian',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/parcela/\d+$});
 
 	# Check district.
-	# XXX Check number after this string.
-	check_string_begin($self, 'district',
-		'https://linked.cuzk.cz/resource/ruian/okres/');
+	check_regexp($self, 'district',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+$});
 
 	# Check id.
 	check_number($self, 'id');
 
 	# Check momc.
-	# XXX Check number after this string.
-	check_string_begin($self, 'momc',
-		'https://linked.cuzk.cz/resource/ruian/momc/');
+	check_regexp($self, 'momc',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/momc/\d+$});
 
 	# Check momc_name.
 	check_array_object($self, 'momc_name', 'Data::Text::Simple');
 
 	# Check mop.
-	# XXX Check number after this string.
-	check_string_begin($self, 'mop',
-		'https://linked.cuzk.cz/resource/ruian/mop/');
+	check_regexp($self, 'mop',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/mop/\d+$});
 
 	# Check mop_name.
 	check_array_object($self, 'mop_name', 'Data::Text::Simple');
 
 	# Check municipality.
-	# XXX Check number after this string.
-	check_string_begin($self, 'municipality',
-		'https://linked.cuzk.cz/resource/ruian/obec/');
+	check_regexp($self, 'municipality',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/obec/\d+$});
 
 	# Check municipality_name.
 	check_array_object($self, 'municipality_name', 'Data::Text::Simple');
 
 	# Check municipality_part.
-	# XXX Check number after this string.
-	check_string_begin($self, 'municipality_part',
-		'https://linked.cuzk.cz/resource/ruian/cast-obce/');
+	check_regexp($self, 'municipality_part',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/cast-obce/\d+$});
 
 	# Check municipality_part_name.
 	check_array_object($self, 'municipality_part_name', 'Data::Text::Simple');
 
 	# Check street.
-	# XXX Check number after this string.
-	check_string_begin($self, 'street',
-		'https://linked.cuzk.cz/resource/ruian/ulice/');
+	check_regexp($self, 'street',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/ulice/\d+$});
 
 	# Check street_name.
 	check_array_object($self, 'street_name', 'Data::Text::Simple');
@@ -209,9 +199,8 @@ sub BUILD {
 	check_array_object($self, 'text', 'Data::Text::Simple');
 
 	# Check vusc.
-	# XXX Check number after this string.
-	check_string_begin($self, 'vusc',
-		'https://linked.cuzk.cz/resource/ruian/vusc/');
+	check_regexp($self, 'vusc',
+		qr{^https://linked\.cuzk\.cz/resource/ruian/vusc/\d+$});
 
 	# Check vusc_name.
 	check_array_object($self, 'vusc', 'Data::Text::Simple');
