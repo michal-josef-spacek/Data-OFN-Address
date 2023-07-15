@@ -19,5 +19,11 @@ META.yml
 README
 t/Data-OFN-Address/01-use.t
 t/Data-OFN-Address/02-version.t
+t/Data-OFN-Address/03-new.t
+t/Data-OFN-Address/04-address_place.t
+t/Data-OFN-Address/05-address_place_code.t
+t/Data-OFN-Address/06-cadastral_area.t
+t/Data-OFN-Address/07-cadastral_area_name.t
+t/Data-OFN-Address/08-conscription_number.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t

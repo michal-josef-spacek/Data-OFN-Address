@@ -23,10 +23,12 @@ requires 'Mo::utils' => 0.17;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-OFN-Address/issues';
 resources 'homepage' => 'https://github.com/michal-josef-spacek/Data-OFN-Address';
 resources 'repository' => 'git://github.com/michal-josef-spacek/Data-OFN-Address';
-test_requires 'Error::Pure' => 0;
-test_requires 'File::Object' => 0;
+test_requires 'Data::Test::Simple' => 0;
+test_requires 'English' => 0;
+test_requires 'Error::Pure::Utils' => 0;
 test_requires 'Test::More' => 0;
 test_requires 'Test::NoWarnings' => 0;
+test_requires 'Unicode::UTF8' => 0;
 tests_recursive;
 version '0.01';
 
