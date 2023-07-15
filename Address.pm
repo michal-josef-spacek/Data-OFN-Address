@@ -143,6 +143,9 @@ sub BUILD {
 	check_array_object($self, 'cadastral_area_name', 'Data::Text::Simple',
 		'Cadastral area name');
 
+	# Check conscription_number.
+	check_number($self, 'conscription_number');
+
 	# Check district.
 	check_regexp($self, 'district',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+});
