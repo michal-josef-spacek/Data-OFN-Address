@@ -140,14 +140,16 @@ sub BUILD {
 		qr{^https://linked\.cuzk\.cz/resource/ruian/katastralni-uzemi/\d+$});
 
 	# Check cadastral_area_name.
-	check_array_object($self, 'cadastral_area_name', 'Data::Text::Simple');
+	check_array_object($self, 'cadastral_area_name', 'Data::Text::Simple',
+		'Cadastral area name');
 
 	# Check district.
 	check_regexp($self, 'district',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+});
 
 	# Check district_name.
-	check_array_object($self, 'district_name', 'Data::Text::Simple');
+	check_array_object($self, 'district_name', 'Data::Text::Simple',
+		'District name');
 
 	# Check element_ruian.
 	check_regexp($self, 'element_ruian',
@@ -165,45 +167,47 @@ sub BUILD {
 		qr{^https://linked\.cuzk\.cz/resource/ruian/momc/\d+$});
 
 	# Check momc_name.
-	check_array_object($self, 'momc_name', 'Data::Text::Simple');
+	check_array_object($self, 'momc_name', 'Data::Text::Simple', 'MOMC name');
 
 	# Check mop.
 	check_regexp($self, 'mop',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/mop/\d+$});
 
 	# Check mop_name.
-	check_array_object($self, 'mop_name', 'Data::Text::Simple');
+	check_array_object($self, 'mop_name', 'Data::Text::Simple', 'MOP name');
 
 	# Check municipality.
 	check_regexp($self, 'municipality',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/obec/\d+$});
 
 	# Check municipality_name.
-	check_array_object($self, 'municipality_name', 'Data::Text::Simple');
+	check_array_object($self, 'municipality_name', 'Data::Text::Simple',
+		'Municipality name');
 
 	# Check municipality_part.
 	check_regexp($self, 'municipality_part',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/cast-obce/\d+$});
 
 	# Check municipality_part_name.
-	check_array_object($self, 'municipality_part_name', 'Data::Text::Simple');
+	check_array_object($self, 'municipality_part_name', 'Data::Text::Simple', 'Municipality part name');
 
 	# Check street.
 	check_regexp($self, 'street',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/ulice/\d+$});
 
 	# Check street_name.
-	check_array_object($self, 'street_name', 'Data::Text::Simple');
+	check_array_object($self, 'street_name', 'Data::Text::Simple',
+		'Street name');
 
 	# Check text.
-	check_array_object($self, 'text', 'Data::Text::Simple');
+	check_array_object($self, 'text', 'Data::Text::Simple', 'Text');
 
 	# Check vusc.
 	check_regexp($self, 'vusc',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/vusc/\d+$});
 
 	# Check vusc_name.
-	check_array_object($self, 'vusc', 'Data::Text::Simple');
+	check_array_object($self, 'vusc', 'Data::Text::Simple', 'VUSC');
 
 	return;
 }
