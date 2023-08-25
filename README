@@ -1,5 +1,5 @@
 NAME
-    Data::OFN::Address - Data object for catalog.
+    Data::OFN::Address - Data object for OFN address.
 
 SYNOPSIS
      use Data::OFN::Address;

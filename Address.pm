@@ -225,7 +225,7 @@ __END__
 
 =head1 NAME
 
-Data::OFN::Address - Data object for catalog.
+Data::OFN::Address - Data object for OFN address.
 
 =head1 SYNOPSIS
 
