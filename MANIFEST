@@ -27,5 +27,6 @@ t/Data-OFN-Address/07-cadastral_area_name.t
 t/Data-OFN-Address/08-conscription_number.t
 t/Data-OFN-Address/09-conscription_number_flag.t
 t/Data-OFN-Address/10-district.t
+t/Data-OFN-Address/11-district_name.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t
