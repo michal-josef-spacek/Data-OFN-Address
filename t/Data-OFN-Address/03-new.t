@@ -16,15 +16,16 @@ isa_ok($obj, 'Data::OFN::Address');
 
 # Test.
 $obj = Data::OFN::Address->new(
-	'address_place' => 'https://linked.cuzk.cz/resource/ruian/adresni-misto/123',
-	'address_place_code' => 123,
-	'cadastral_area' => 'https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/123',
+	'address_place' => 'https://linked.cuzk.cz/resource/ruian/adresni-misto/83163832',
+	'address_place_code' => 83163832,
+	'cadastral_area' => 'https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/635448',
 	'cadastral_area_name' => [Data::Text::Simple->new(
 		'lang' => 'cs',
-		'text' => decode_utf8('Katastrální území'),
+		'text' => decode_utf8('Fulnek'),
 	)],
 	'conscription_number' => 123,
 	'conscription_number_flag' => 'a',
+	'district' => 'https://linked.cuzk.cz/resource/ruian/okres/3804',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
