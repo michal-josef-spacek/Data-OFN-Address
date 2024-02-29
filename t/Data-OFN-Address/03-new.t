@@ -24,6 +24,7 @@ $obj = Data::OFN::Address->new(
 		'text' => decode_utf8('Katastrální území'),
 	)],
 	'conscription_number' => 123,
+	'conscription_number_flag' => 'a',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
