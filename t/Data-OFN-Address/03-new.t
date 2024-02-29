@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 11;
+use Test::More 'tests' => 12;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -106,4 +106,14 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'conscription_number' must be a number.\n",
 	"Parameter 'conscription_number' must be a number.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'conscription_number_flag' => 'a',
+	);
+};
+is($EVAL_ERROR, "Parameter 'conscription_number_flag' is possible with 'conscription_number' parameter only.\n",
+	"Parameter 'conscription_number_flag' is possible with 'conscription_number' parameter only.");
 clean();

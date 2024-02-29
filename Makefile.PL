@@ -18,6 +18,7 @@ name 'Data-OFN-Address';
 perl_version 5.008;
 readme_from 'Address.pm';
 recursive_author_tests('xt');
+requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
 requires 'Mo::utils' => 0.17;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-OFN-Address/issues';

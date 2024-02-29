@@ -3,6 +3,7 @@ package Data::OFN::Address;
 use strict;
 use warnings;
 
+use Error::Pure qw(err);
 use Mo qw(build default is);
 use Mo::utils qw(check_array_object check_number check_regexp);
 
@@ -145,6 +146,13 @@ sub BUILD {
 
 	# Check conscription_number.
 	check_number($self, 'conscription_number');
+
+	# Check conscription_number_flag.
+	if (! defined $self->{'conscription_number'}
+		&& defined $self->{'conscription_number_flag'}) {
+
+		err "Parameter 'conscription_number_flag' is possible with 'conscription_number' parameter only.";
+	}
 
 	# Check district.
 	check_regexp($self, 'district',
