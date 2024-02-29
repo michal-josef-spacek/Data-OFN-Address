@@ -19,17 +19,19 @@ $obj = Data::OFN::Address->new(
 	'address_place' => 'https://linked.cuzk.cz/resource/ruian/adresni-misto/83163832',
 	'address_place_code' => 83163832,
 	'cadastral_area' => 'https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/635448',
-	'cadastral_area_name' => [Data::Text::Simple->new(
-		'lang' => 'cs',
-		'text' => decode_utf8('Fulnek'),
-	)],
+	'cadastral_area_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => 'Fulnek',
+		),
+	],
 	'conscription_number' => 123,
 	'conscription_number_flag' => 'a',
 	'district' => 'https://linked.cuzk.cz/resource/ruian/okres/3804',
 	'district_name' => [
 		Data::Text::Simple->new(
 			'lang' => 'cs',
-			'text' => 'Fulnek',
+			'text' => decode_utf8('Nový Jičín'),
 		),
 	],
 );

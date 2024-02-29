@@ -5,6 +5,7 @@ use Data::OFN::Address;
 use Data::Text::Simple;
 use Test::More 'tests' => 5;
 use Test::NoWarnings;
+use Unicode::UTF8 qw(decode_utf8);
 
 # Test.
 my $obj = Data::OFN::Address->new;
@@ -19,7 +20,7 @@ $obj = Data::OFN::Address->new(
 	'district_name' => [
 		Data::Text::Simple->new(
 			'lang' => 'cs',
-			'text' => 'Fulnek',
+			'text' => decode_utf8('Nový Jičín'),
 		),
 	],
 );
@@ -28,6 +29,6 @@ is($obj->district_name->[0]->lang, 'cs',
 	'Get district name language (cs).');
 is(
 	$obj->district_name->[0]->text,
-	'Fulnek',
-	'Get district name (Fulnek).',
+	decode_utf8('Nový Jičín'),
+	'Get district name (Nový Jičín).',
 );
