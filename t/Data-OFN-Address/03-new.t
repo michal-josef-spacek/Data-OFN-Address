@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 12;
+use Test::More 'tests' => 13;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -34,6 +34,7 @@ $obj = Data::OFN::Address->new(
 			'text' => decode_utf8('Nový Jičín'),
 		),
 	],
+	'element_ruian' => 'https://linked.cuzk.cz/resource/ruian/parcela/91188411010',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
@@ -126,4 +127,14 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'conscription_number_flag' is possible with 'conscription_number' parameter only.\n",
 	"Parameter 'conscription_number_flag' is possible with 'conscription_number' parameter only.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'element_ruian' => '91188411010',
+	);
+};
+is($EVAL_ERROR, "Parameter 'element_ruian' does not match the specified regular expression.\n",
+	"Parameter 'element_ruian' does not match the specified regular expression.");
 clean();
