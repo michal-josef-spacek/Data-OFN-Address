@@ -26,6 +26,12 @@ $obj = Data::OFN::Address->new(
 	'conscription_number' => 123,
 	'conscription_number_flag' => 'a',
 	'district' => 'https://linked.cuzk.cz/resource/ruian/okres/3804',
+	'district_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => 'Fulnek',
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
