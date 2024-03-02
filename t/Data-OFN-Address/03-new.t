@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 13;
+use Test::More 'tests' => 14;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -36,6 +36,7 @@ $obj = Data::OFN::Address->new(
 	],
 	'element_ruian' => 'https://linked.cuzk.cz/resource/ruian/parcela/91188411010',
 	'house_number' => 386,
+	'house_number_type' => decode_utf8('č.p.'),
 );
 isa_ok($obj, 'Data::OFN::Address');
 
@@ -138,4 +139,14 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'element_ruian' does not match the specified regular expression.\n",
 	"Parameter 'element_ruian' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'house_number_type' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'house_number_type' must be one of defined strings.\n",
+	"Parameter 'house_number_type' must be one of defined strings.");
 clean();

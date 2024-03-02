@@ -30,5 +30,6 @@ t/Data-OFN-Address/10-district.t
 t/Data-OFN-Address/11-district_name.t
 t/Data-OFN-Address/12-element_ruian.t
 t/Data-OFN-Address/13-house_number.t
+t/Data-OFN-Address/14-house_number_type.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t
