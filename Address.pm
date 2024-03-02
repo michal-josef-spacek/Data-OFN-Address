@@ -5,7 +5,14 @@ use warnings;
 
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils qw(check_array_object check_number check_regexp);
+use Mo::utils qw(check_array_object check_number check_regexp check_strings);
+use Readonly;
+use Unicode::UTF8 qw(decode_utf8);
+
+Readonly::Array our @HOUSE_NUMBER_TYPES => (
+	decode_utf8('č.p.'),
+	decode_utf8('č.ev.'),
+);
 
 our $VERSION = 0.01;
 
@@ -169,6 +176,9 @@ sub BUILD {
 	# Check district.
 	check_regexp($self, 'district',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+$});
+
+	# Check house_number_type.
+	check_strings($self, 'house_number_type', \@HOUSE_NUMBER_TYPES);
 
 	# Check id.
 	check_number($self, 'id');
