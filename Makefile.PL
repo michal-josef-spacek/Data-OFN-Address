@@ -20,7 +20,7 @@ readme_from 'Address.pm';
 recursive_author_tests('xt');
 requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
-requires 'Mo::utils' => 0.17;
+requires 'Mo::utils' => 0.21;
 requires 'Readonly' => 0;
 requires 'Unicode::UTF8' => 0;
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Data-OFN-Address/issues';
