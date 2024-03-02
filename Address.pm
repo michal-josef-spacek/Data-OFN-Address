@@ -71,6 +71,7 @@ has momc => (
 );
 
 has momc_name => (
+	default => [],
 	is => 'ro',
 );
 
