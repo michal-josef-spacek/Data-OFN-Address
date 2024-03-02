@@ -84,11 +84,6 @@ has mop_name => (
 	is => 'ro',
 );
 
-has name => (
-	default => [],
-	is => 'ro',
-);
-
 has municipality => (
 	is => 'ro',
 );
@@ -103,6 +98,11 @@ has municipality_part => (
 );
 
 has municipality_part_name => (
+	default => [],
+	is => 'ro',
+);
+
+has name => (
 	default => [],
 	is => 'ro',
 );
@@ -267,11 +267,11 @@ Data::OFN::Address - Data object for OFN address.
  my $momc_name = $obj->momc_name;
  my $mop = $obj->mop;
  my $mop_name = $obj->mop_name;
- my $name = $obj->name;
  my $municipality = $obj->municipality;
  my $municipality_name = $obj->municipality_name;
  my $municipality_part = $obj->municipality_part;
  my $municipality_part_name = $obj->municipality_part_name;
+ my $name = $obj->name;
  my $psc = $obj->psc;
  my $street = $obj->street;
  my $street_name = $obj->street_name;
@@ -385,12 +385,6 @@ TODO
 
 It's optional.
 
-=item * C<name>
-
-Address name.
-
-It's optional.
-
 =item * C<municipality>
 
 TODO
@@ -412,6 +406,12 @@ It's optional.
 =item * C<municipality_part_name>
 
 TODO
+
+It's optional.
+
+=item * C<name>
+
+Address name.
 
 It's optional.
 
