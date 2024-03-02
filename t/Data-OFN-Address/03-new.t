@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 17;
+use Test::More 'tests' => 18;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -181,4 +181,14 @@ eval {
 };
 is($EVAL_ERROR, "MOMC name isn't 'Data::Text::Simple' object.\n",
 	"MOMC name isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'mop' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'mop' does not match the specified regular expression.\n",
+	"Parameter 'mop' does not match the specified regular expression.");
 clean();
