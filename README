@@ -5,7 +5,33 @@ SYNOPSIS
      use Data::OFN::Address;
 
      my $obj = Data::OFN::Address->new(%params);
-     # TODO
+     my $address_place = $obj->address_place;
+     my $address_place_code = $obj->address_place_code;
+     my $cadastral_area = $obj->cadastral_area;
+     my $cadastral_area_name = $obj->cadastral_area_name;
+     my $conscription_number = $obj->conscription_number;
+     my $conscription_number_flag = $obj->conscription_number_flag;
+     my $district = $obj->district;
+     my $district_name = $obj->district_name;
+     my $element_ruian = $obj->element_ruian;
+     my $house_number = $obj->house_number;
+     my $house_number_type = $obj->house_number_type;
+     my $id = $obj->id;
+     my $momc = $obj->momc;
+     my $momc_name = $obj->momc_name;
+     my $mop = $obj->mop;
+     my $mop_name = $obj->mop_name;
+     my $name = $obj->name;
+     my $municipality = $obj->municipality;
+     my $municipality_name = $obj->municipality_name;
+     my $municipality_part = $obj->municipality_part;
+     my $municipality_part_name = $obj->municipality_part_name;
+     my $psc = $obj->psc;
+     my $street = $obj->street;
+     my $street_name = $obj->street_name;
+     my $text = $obj->text;
+     my $vusc = $obj->vusc;
+     my $vusc_name = $obj->vusc_name;
 
 METHODS
   "new"
@@ -13,14 +39,11 @@ METHODS
 
     Constructor.
 
-    *       "items"
-
-            Address item objects. Each item must be a Data::Catalog::Item
-            object. It's optional. Default value is [].
-
     *       "name"
 
-            Address name. It's required.
+            Address name.
+
+            It's optional.
 
     Returns instance of object.
 
