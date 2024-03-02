@@ -37,6 +37,7 @@ $obj = Data::OFN::Address->new(
 	'element_ruian' => 'https://linked.cuzk.cz/resource/ruian/parcela/91188411010',
 	'house_number' => 386,
 	'house_number_type' => decode_utf8('č.p.'),
+	'id' => 7,
 );
 isa_ok($obj, 'Data::OFN::Address');
 
