@@ -39,9 +39,165 @@ METHODS
 
     Constructor.
 
+    *       "address_place"
+
+            TODO
+
+            It's optional.
+
+    *       "address_place_code"
+
+            TODO
+
+            It's optional.
+
+    *       "cadastral_area"
+
+            TODO
+
+            It's optional.
+
+    *       "cadastral_area_name"
+
+            TODO
+
+            It's optional.
+
+    *       "conscription_number"
+
+            TODO
+
+            It's optional.
+
+    *       "conscription_number_flag"
+
+            TODO
+
+            It's optional.
+
+    *       "district"
+
+            TODO
+
+            It's optional.
+
+    *       "district_name"
+
+            TODO
+
+            It's optional.
+
+    *       "element_ruian"
+
+            TODO
+
+            It's optional.
+
+    *       "house_number"
+
+            TODO
+
+            It's optional.
+
+    *       "house_number_type"
+
+            TODO
+
+            It's optional.
+
+    *       "id"
+
+            TODO
+
+            It's optional.
+
+    *       "momc"
+
+            TODO
+
+            It's optional.
+
+    *       "momc_name"
+
+            TODO
+
+            It's optional.
+
+    *       "mop"
+
+            TODO
+
+            It's optional.
+
+    *       "mop_name"
+
+            TODO
+
+            It's optional.
+
     *       "name"
 
             Address name.
+
+            It's optional.
+
+    *       "municipality"
+
+            TODO
+
+            It's optional.
+
+    *       "municipality_name"
+
+            TODO
+
+            It's optional.
+
+    *       "municipality_part"
+
+            TODO
+
+            It's optional.
+
+    *       "municipality_part_name"
+
+            TODO
+
+            It's optional.
+
+    *       "psc"
+
+            TODO
+
+            It's optional.
+
+    *       "street"
+
+            TODO
+
+            It's optional.
+
+    *       "street_name"
+
+            TODO
+
+            It's optional.
+
+    *       "text"
+
+            TODO
+
+            It's optional.
+
+    *       "vusc"
+
+            TODO
+
+            It's optional.
+
+    *       "vusc_name"
+
+            TODO
 
             It's optional.
 

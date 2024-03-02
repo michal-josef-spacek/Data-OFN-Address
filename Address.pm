@@ -289,9 +289,165 @@ Constructor.
 
 =over 8
 
+=item * C<address_place>
+
+TODO
+
+It's optional.
+
+=item * C<address_place_code>
+
+TODO
+
+It's optional.
+
+=item * C<cadastral_area>
+
+TODO
+
+It's optional.
+
+=item * C<cadastral_area_name>
+
+TODO
+
+It's optional.
+
+=item * C<conscription_number>
+
+TODO
+
+It's optional.
+
+=item * C<conscription_number_flag>
+
+TODO
+
+It's optional.
+
+=item * C<district>
+
+TODO
+
+It's optional.
+
+=item * C<district_name>
+
+TODO
+
+It's optional.
+
+=item * C<element_ruian>
+
+TODO
+
+It's optional.
+
+=item * C<house_number>
+
+TODO
+
+It's optional.
+
+=item * C<house_number_type>
+
+TODO
+
+It's optional.
+
+=item * C<id>
+
+TODO
+
+It's optional.
+
+=item * C<momc>
+
+TODO
+
+It's optional.
+
+=item * C<momc_name>
+
+TODO
+
+It's optional.
+
+=item * C<mop>
+
+TODO
+
+It's optional.
+
+=item * C<mop_name>
+
+TODO
+
+It's optional.
+
 =item * C<name>
 
 Address name.
+
+It's optional.
+
+=item * C<municipality>
+
+TODO
+
+It's optional.
+
+=item * C<municipality_name>
+
+TODO
+
+It's optional.
+
+=item * C<municipality_part>
+
+TODO
+
+It's optional.
+
+=item * C<municipality_part_name>
+
+TODO
+
+It's optional.
+
+=item * C<psc>
+
+TODO
+
+It's optional.
+
+=item * C<street>
+
+TODO
+
+It's optional.
+
+=item * C<street_name>
+
+TODO
+
+It's optional.
+
+=item * C<text>
+
+TODO
+
+It's optional.
+
+=item * C<vusc>
+
+TODO
+
+It's optional.
+
+=item * C<vusc_name>
+
+TODO
 
 It's optional.
 
