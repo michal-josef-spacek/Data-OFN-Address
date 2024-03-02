@@ -98,7 +98,7 @@ eval {
 	);
 };
 is($EVAL_ERROR, "Cadastral area name isn't 'Data::Text::Simple' object.\n",
-	"Cadastral area name isn't 'Data::Text::Simple' object.");
+	"Cadastral area name isn't 'Data::Text::Simple' object (bad).");
 clean();
 
 # Test.
@@ -109,7 +109,7 @@ eval {
 	);
 };
 is($EVAL_ERROR, "Cadastral area name isn't 'Data::Text::Simple' object.\n",
-	"Cadastral area name isn't 'Data::Text::Simple' object.");
+	"Cadastral area name isn't 'Data::Text::Simple' object (object).");
 clean();
 
 # Test.
