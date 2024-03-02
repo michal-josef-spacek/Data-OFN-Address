@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 20;
+use Test::More 'tests' => 21;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -38,6 +38,7 @@ $obj = Data::OFN::Address->new(
 	'house_number' => 386,
 	'house_number_type' => decode_utf8('č.p.'),
 	'id' => 7,
+	'municipality' => 'https://linked.cuzk.cz/resource/ruian/obec/599352',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
@@ -212,4 +213,14 @@ eval {
 };
 is($EVAL_ERROR, "MOP name isn't 'Data::Text::Simple' object.\n",
 	"MOP name isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'municipality' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'municipality' does not match the specified regular expression.\n",
+	"Parameter 'municipality' does not match the specified regular expression.");
 clean();
