@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 15;
+use Test::More 'tests' => 17;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -160,4 +160,25 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'momc' does not match the specified regular expression.\n",
 	"Parameter 'momc' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'momc_name' => ['bad'],
+	);
+};
+is($EVAL_ERROR, "MOMC name isn't 'Data::Text::Simple' object.\n",
+	"MOMC name isn't 'Data::Text::Simple' object (bad).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'momc_name' => [$mock],
+	);
+};
+is($EVAL_ERROR, "MOMC name isn't 'Data::Text::Simple' object.\n",
+	"MOMC name isn't 'Data::Text::Simple' object (object).");
 clean();

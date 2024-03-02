@@ -33,5 +33,6 @@ t/Data-OFN-Address/13-house_number.t
 t/Data-OFN-Address/14-house_number_type.t
 t/Data-OFN-Address/15-id.t
 t/Data-OFN-Address/16-momc.t
+t/Data-OFN-Address/17-momc_name.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t
