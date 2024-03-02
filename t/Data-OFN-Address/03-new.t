@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 14;
+use Test::More 'tests' => 15;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -150,4 +150,14 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'house_number_type' must be one of defined strings.\n",
 	"Parameter 'house_number_type' must be one of defined strings.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'momc' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'momc' does not match the specified regular expression.\n",
+	"Parameter 'momc' does not match the specified regular expression.");
 clean();
