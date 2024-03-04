@@ -37,6 +37,7 @@ t/Data-OFN-Address/17-momc_name.t
 t/Data-OFN-Address/18-mop.t
 t/Data-OFN-Address/19-mop_name.t
 t/Data-OFN-Address/20-municipality.t
-t/Data-OFN-Address/21-name.t
+t/Data-OFN-Address/21-municipality_name.t
+t/Data-OFN-Address/22-name.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t

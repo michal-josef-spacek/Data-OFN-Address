@@ -39,6 +39,12 @@ $obj = Data::OFN::Address->new(
 	'house_number_type' => decode_utf8('č.p.'),
 	'id' => 7,
 	'municipality' => 'https://linked.cuzk.cz/resource/ruian/obec/599352',
+	'municipality_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => 'Fulnek',
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
