@@ -45,6 +45,7 @@ $obj = Data::OFN::Address->new(
 			'text' => 'Fulnek',
 		),
 	],
+	'municipality_part' => 'https://linked.cuzk.cz/resource/ruian/cast-obce/413551',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
