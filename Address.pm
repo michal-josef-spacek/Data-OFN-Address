@@ -644,8 +644,11 @@ TODO
 
 =head1 DEPENDENCIES
 
+L<Error::Pure>
 L<Mo>,
-L<Mo::utils>.
+L<Mo::utils>,
+L<Readonly>,
+L<Unicode::UTF8>.
 
 =head1 REPOSITORY
 

@@ -366,7 +366,7 @@ EXAMPLE
      # TODO
 
 DEPENDENCIES
-    Mo, Mo::utils.
+    Error::Pure Mo, Mo::utils, Readonly, Unicode::UTF8.
 
 REPOSITORY
     <https://github.com/michal-josef-spacek/Data-OFN-Address>
