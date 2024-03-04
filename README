@@ -203,8 +203,148 @@ METHODS
 
     Returns instance of object.
 
-  "TODO"
+  "address_place"
+     my $address_place = $obj->address_place;
+
     TODO
+
+  "address_place_code"
+     my $address_place_code = $obj->address_place_code;
+
+    TODO
+
+  "cadastral_area"
+     my $cadastral_area = $obj->cadastral_area;
+
+    TODO
+
+  "cadastral_area_name"
+     my $cadastral_area_name = $obj->cadastral_area_name;
+
+    TODO
+
+  "conscription_number"
+     my $conscription_number = $obj->conscription_number;
+
+    TODO
+
+  "conscription_number_flag"
+     my $conscription_number_flag = $obj->conscription_number_flag;
+
+    TODO
+
+  "district"
+     my $district = $obj->district;
+
+    TODO
+
+  "district_name"
+     my $district_name = $obj->district_name;
+
+    TODO
+
+  "element_ruian"
+     my $element_ruian = $obj->element_ruian;
+
+    TODO
+
+  "house_number"
+     my $house_number = $obj->house_number;
+
+    TODO
+
+  "house_number_type"
+     my $house_number_type = $obj->house_number_type;
+
+    TODO
+
+  "id"
+     my $id = $obj->id;
+
+    Get OFN address id.
+
+    Returns number.
+
+  "momc"
+     my $momc = $obj->momc;
+
+    TODO
+
+  "momc_name"
+     my $momc_name = $obj->momc_name;
+
+    TODO
+
+  "mop"
+     my $mop = $obj->mop;
+
+    TODO
+
+  "mop_name"
+     my $mop_name = $obj->mop_name;
+
+    TODO
+
+  "municipality"
+     my $municipality = $obj->municipality;
+
+    TODO
+
+  "municipality_name"
+     my $municipality_name = $obj->municipality_name;
+
+    TODO
+
+  "municipality_part"
+     my $municipality_part = $obj->municipality_part;
+
+    TODO
+
+  "municipality_part_name"
+     my $municipality_part_name = $obj->municipality_part_name;
+
+    TODO
+
+  "name"
+     my $name = $obj->name;
+
+    TODO
+
+  "psc"
+     my $psc = $obj->psc;
+
+    TODO
+
+  "street"
+     my $street = $obj->street;
+
+    TODO
+
+  "street_name"
+     my $street_name = $obj->street_name;
+
+    TODO
+
+  "text"
+     my $text = $obj->text;
+
+    TODO
+
+  "vusc"
+     my $vusc = $obj->vusc;
+
+    TODO
+
+  "vusc_name"
+     my $vusc_name = $obj->vusc_name;
+
+    TODO
+
+ERRORS
+     new():
+             From Mo::utils:
+                     Parameter 'id' must a number.
+                             Value: %s
 
 EXAMPLE
      use strict;

@@ -455,9 +455,176 @@ It's optional.
 
 Returns instance of object.
 
-=head2 C<TODO>
+=head2 C<address_place>
+
+ my $address_place = $obj->address_place;
 
 TODO
+
+=head2 C<address_place_code>
+
+ my $address_place_code = $obj->address_place_code;
+
+TODO
+
+=head2 C<cadastral_area>
+
+ my $cadastral_area = $obj->cadastral_area;
+
+TODO
+
+=head2 C<cadastral_area_name>
+
+ my $cadastral_area_name = $obj->cadastral_area_name;
+
+TODO
+
+=head2 C<conscription_number>
+
+ my $conscription_number = $obj->conscription_number;
+
+TODO
+
+=head2 C<conscription_number_flag>
+
+ my $conscription_number_flag = $obj->conscription_number_flag;
+
+TODO
+
+=head2 C<district>
+
+ my $district = $obj->district;
+
+TODO
+
+=head2 C<district_name>
+
+ my $district_name = $obj->district_name;
+
+TODO
+
+=head2 C<element_ruian>
+
+ my $element_ruian = $obj->element_ruian;
+
+TODO
+
+=head2 C<house_number>
+
+ my $house_number = $obj->house_number;
+
+TODO
+
+=head2 C<house_number_type>
+
+ my $house_number_type = $obj->house_number_type;
+
+TODO
+
+=head2 C<id>
+
+ my $id = $obj->id;
+
+Get OFN address id.
+
+Returns number.
+
+=head2 C<momc>
+
+ my $momc = $obj->momc;
+
+TODO
+
+=head2 C<momc_name>
+
+ my $momc_name = $obj->momc_name;
+
+TODO
+
+=head2 C<mop>
+
+ my $mop = $obj->mop;
+
+TODO
+
+=head2 C<mop_name>
+
+ my $mop_name = $obj->mop_name;
+
+TODO
+
+=head2 C<municipality>
+
+ my $municipality = $obj->municipality;
+
+TODO
+
+=head2 C<municipality_name>
+
+ my $municipality_name = $obj->municipality_name;
+
+TODO
+
+=head2 C<municipality_part>
+
+ my $municipality_part = $obj->municipality_part;
+
+TODO
+
+=head2 C<municipality_part_name>
+
+ my $municipality_part_name = $obj->municipality_part_name;
+
+TODO
+
+=head2 C<name>
+
+ my $name = $obj->name;
+
+TODO
+
+=head2 C<psc>
+
+ my $psc = $obj->psc;
+
+TODO
+
+=head2 C<street>
+
+ my $street = $obj->street;
+
+TODO
+
+=head2 C<street_name>
+
+ my $street_name = $obj->street_name;
+
+TODO
+
+=head2 C<text>
+
+ my $text = $obj->text;
+
+TODO
+
+=head2 C<vusc>
+
+ my $vusc = $obj->vusc;
+
+TODO
+
+=head2 C<vusc_name>
+
+ my $vusc_name = $obj->vusc_name;
+
+TODO
+
+=head1 ERRORS
+
+ new():
+         From Mo::utils:
+                 Parameter 'id' must a number.
+                         Value: %s
 
 =head1 EXAMPLE
 
