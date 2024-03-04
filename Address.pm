@@ -102,11 +102,6 @@ has municipality_part_name => (
 	is => 'ro',
 );
 
-has name => (
-	default => [],
-	is => 'ro',
-);
-
 has psc => (
 	is => 'ro',
 );
@@ -271,7 +266,6 @@ Data::OFN::Address - Data object for OFN address.
  my $municipality_name = $obj->municipality_name;
  my $municipality_part = $obj->municipality_part;
  my $municipality_part_name = $obj->municipality_part_name;
- my $name = $obj->name;
  my $psc = $obj->psc;
  my $street = $obj->street;
  my $street_name = $obj->street_name;
@@ -418,14 +412,6 @@ TODO
 Default value is [].
 
 It's optional.
-
-=item * C<name>
-
-Address name.
-
-It's optional.
-
-Default value is [].
 
 =item * C<psc>
 
@@ -595,12 +581,6 @@ TODO
 
 TODO
 
-=head2 C<name>
-
- my $name = $obj->name;
-
-TODO
-
 =head2 C<psc>
 
  my $psc = $obj->psc;
@@ -657,7 +637,7 @@ TODO
  );
 
  # Print out.
- # print 'Name: '.$obj->name."\n";
+ # print 'Text: '.$obj->text."\n";
 
  # Output:
  # TODO

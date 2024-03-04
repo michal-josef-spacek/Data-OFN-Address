@@ -5,10 +5,13 @@ TODO
 4. Check language in names.
 5. Real address with momc, momc_name to test.
 6. Real address with mop, mop_name to test.
-7. Parameter 'name' is in standard?
 8.
 
 Applied
 =======
 3. Rewrite some check_string_begin() to check_regexp()
 OK [20230709] skim
+
+7. Parameter 'name' is in standard?
+Removed.
+OK [20240304] skim
