@@ -12,7 +12,7 @@ my $obj = Data::OFN::Address->new;
 is_deeply(
 	$obj->cadastral_area_name,
 	[],
-	'Get cadastral area name ([]).',
+	'Get cadastral area name (reference to blank array - default).',
 );
 
 # Test.

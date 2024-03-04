@@ -12,7 +12,7 @@ my $obj = Data::OFN::Address->new;
 is_deeply(
 	$obj->district_name,
 	[],
-	'Get district name ([]).',
+	'Get district name (reference to blank array - default).',
 );
 
 # Test.

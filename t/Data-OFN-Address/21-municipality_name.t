@@ -8,7 +8,7 @@ use Test::NoWarnings;
 
 # Test.
 my $obj = Data::OFN::Address->new;
-is_deeply($obj->municipality_name, [], 'Get municipality name (undef - default).');
+is_deeply($obj->municipality_name, [], 'Get municipality name (reference to blank array - default).');
 
 # Test.
 $obj = Data::OFN::Address->new(
