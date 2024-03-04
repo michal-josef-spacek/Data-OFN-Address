@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 21;
+use Test::More 'tests' => 23;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -46,6 +46,12 @@ $obj = Data::OFN::Address->new(
 		),
 	],
 	'municipality_part' => 'https://linked.cuzk.cz/resource/ruian/cast-obce/413551',
+	'municipality_part_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => 'Fulnek',
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
@@ -230,4 +236,25 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'municipality' does not match the specified regular expression.\n",
 	"Parameter 'municipality' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'municipality_part_name' => ['bad'],
+	);
+};
+is($EVAL_ERROR, "Municipality part name isn't 'Data::Text::Simple' object.\n",
+	"Municipality part name isn't 'Data::Text::Simple' object (bad).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'municipality_part_name' => [$mock],
+	);
+};
+is($EVAL_ERROR, "Municipality part name isn't 'Data::Text::Simple' object.\n",
+	"Municipality part name isn't 'Data::Text::Simple' object (object).");
 clean();
