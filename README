@@ -63,6 +63,8 @@ METHODS
 
             It's optional.
 
+            Default value is [].
+
     *       "conscription_number"
 
             TODO
@@ -86,6 +88,8 @@ METHODS
             TODO
 
             It's optional.
+
+            Default value is [].
 
     *       "element_ruian"
 
@@ -123,6 +127,8 @@ METHODS
 
             It's optional.
 
+            Default value is [].
+
     *       "mop"
 
             TODO
@@ -145,6 +151,8 @@ METHODS
 
             TODO
 
+            Default value is [].
+
             It's optional.
 
     *       "municipality_part"
@@ -157,6 +165,8 @@ METHODS
 
             TODO
 
+            Default value is [].
+
             It's optional.
 
     *       "name"
@@ -164,6 +174,8 @@ METHODS
             Address name.
 
             It's optional.
+
+            Default value is [].
 
     *       "psc"
 
@@ -183,11 +195,15 @@ METHODS
 
             It's optional.
 
+            Default value is [].
+
     *       "text"
 
             TODO
 
             It's optional.
+
+            Default value is [].
 
     *       "vusc"
 
@@ -200,6 +216,8 @@ METHODS
             TODO
 
             It's optional.
+
+            Default value is [].
 
     Returns instance of object.
 

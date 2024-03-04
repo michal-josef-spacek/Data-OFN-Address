@@ -313,6 +313,8 @@ TODO
 
 It's optional.
 
+Default value is [].
+
 =item * C<conscription_number>
 
 TODO
@@ -336,6 +338,8 @@ It's optional.
 TODO
 
 It's optional.
+
+Default value is [].
 
 =item * C<element_ruian>
 
@@ -373,6 +377,8 @@ TODO
 
 It's optional.
 
+Default value is [].
+
 =item * C<mop>
 
 TODO
@@ -395,6 +401,8 @@ It's optional.
 
 TODO
 
+Default value is [].
+
 It's optional.
 
 =item * C<municipality_part>
@@ -407,6 +415,8 @@ It's optional.
 
 TODO
 
+Default value is [].
+
 It's optional.
 
 =item * C<name>
@@ -414,6 +424,8 @@ It's optional.
 Address name.
 
 It's optional.
+
+Default value is [].
 
 =item * C<psc>
 
@@ -433,11 +445,15 @@ TODO
 
 It's optional.
 
+Default value is [].
+
 =item * C<text>
 
 TODO
 
 It's optional.
+
+Default value is [].
 
 =item * C<vusc>
 
@@ -450,6 +466,8 @@ It's optional.
 TODO
 
 It's optional.
+
+Default value is [].
 
 =back
 
