@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 26;
+use Test::More 'tests' => 34;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -309,4 +309,87 @@ eval {
 };
 is($EVAL_ERROR, "Municipality part name isn't 'Data::Text::Simple' object.\n",
 	"Municipality part name isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'street' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'street' does not match the specified regular expression.\n",
+	"Parameter 'street' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'street_name' => ['bad'],
+	);
+};
+is($EVAL_ERROR, "Street name isn't 'Data::Text::Simple' object.\n",
+	"Street name isn't 'Data::Text::Simple' object (bad).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'street_name' => [$mock],
+	);
+};
+is($EVAL_ERROR, "Street name isn't 'Data::Text::Simple' object.\n",
+	"Street name isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'text' => ['bad'],
+	);
+};
+is($EVAL_ERROR, "Text isn't 'Data::Text::Simple' object.\n",
+	"Text isn't 'Data::Text::Simple' object (bad).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'text' => [$mock],
+	);
+};
+is($EVAL_ERROR, "Text isn't 'Data::Text::Simple' object.\n",
+	"Text isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'vusc' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'vusc' does not match the specified regular expression.\n",
+	"Parameter 'vusc' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'vusc_name' => ['bad'],
+	);
+};
+is($EVAL_ERROR, "VUSC name isn't 'Data::Text::Simple' object.\n",
+	"VUSC name isn't 'Data::Text::Simple' object (bad).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'vusc_name' => [$mock],
+	);
+};
+is($EVAL_ERROR, "VUSC name isn't 'Data::Text::Simple' object.\n",
+	"VUSC name isn't 'Data::Text::Simple' object (object).");
 clean();
