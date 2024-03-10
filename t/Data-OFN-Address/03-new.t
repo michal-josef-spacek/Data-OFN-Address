@@ -67,6 +67,12 @@ $obj = Data::OFN::Address->new(
 		),
 	],
 	'vusc' => 'https://linked.cuzk.cz/resource/ruian/vusc/132',
+	'vusc_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => decode_utf8('Moravskoslezský kraj'),
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
