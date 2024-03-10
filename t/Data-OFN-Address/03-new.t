@@ -66,6 +66,7 @@ $obj = Data::OFN::Address->new(
 			'text' => decode_utf8('Bílovecká 386, 74245 Fulnek'),
 		),
 	],
+	'vusc' => 'https://linked.cuzk.cz/resource/ruian/vusc/132',
 );
 isa_ok($obj, 'Data::OFN::Address');
 
