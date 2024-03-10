@@ -224,7 +224,7 @@ sub BUILD {
 		qr{^https://linked\.cuzk\.cz/resource/ruian/vusc/\d+$});
 
 	# Check vusc_name.
-	check_array_object($self, 'vusc_name', 'Data::Text::Simple', 'VUSC');
+	check_array_object($self, 'vusc_name', 'Data::Text::Simple', 'VUSC name');
 
 	return;
 }
