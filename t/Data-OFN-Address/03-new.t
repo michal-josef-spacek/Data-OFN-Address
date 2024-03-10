@@ -52,6 +52,7 @@ $obj = Data::OFN::Address->new(
 			'text' => 'Fulnek',
 		),
 	],
+	'psc' => 74245,
 );
 isa_ok($obj, 'Data::OFN::Address');
 
