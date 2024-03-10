@@ -54,6 +54,12 @@ $obj = Data::OFN::Address->new(
 	],
 	'psc' => 74245,
 	'street' => 'https://linked.cuzk.cz/resource/ruian/ulice/309184',
+	'street_name' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => decode_utf8('Bílovecká'),
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
