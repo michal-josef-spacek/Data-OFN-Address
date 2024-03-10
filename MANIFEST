@@ -43,5 +43,6 @@ t/Data-OFN-Address/23-municipality_part_name.t
 t/Data-OFN-Address/24-psc.t
 t/Data-OFN-Address/25-street.t
 t/Data-OFN-Address/26-street_name.t
+t/Data-OFN-Address/27-text.t
 xt/Data-OFN-Address/01-pod_coverage.t
 xt/Data-OFN-Address/02-pod.t

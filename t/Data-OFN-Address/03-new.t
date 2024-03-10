@@ -60,6 +60,12 @@ $obj = Data::OFN::Address->new(
 			'text' => decode_utf8('Bílovecká'),
 		),
 	],
+	'text' => [
+		Data::Text::Simple->new(
+			'lang' => 'cs',
+			'text' => decode_utf8('Bílovecká 386, 74245 Fulnek'),
+		),
+	],
 );
 isa_ok($obj, 'Data::OFN::Address');
 
