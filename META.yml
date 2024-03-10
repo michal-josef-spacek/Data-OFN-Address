@@ -28,7 +28,7 @@ no_index:
 requires:
   Error::Pure: 0
   Mo: 0
-  Mo::utils: 0.21
+  Mo::utils: 0.22
   Readonly: 0
   Unicode::UTF8: 0
   perl: 5.8.0

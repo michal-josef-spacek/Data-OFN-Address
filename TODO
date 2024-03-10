@@ -4,7 +4,6 @@ TODO
 4. Check language in names.
 5. Real address with momc, momc_name to test.
 6. Real address with mop, mop_name to test.
-8. Add check for psc?
 9.
 
 Applied
@@ -18,3 +17,6 @@ OK [20240304] skim
 
 2. Add tests.
 OK [20240310] skim
+
+8. Add check for psc?
+OK [20240311] skim

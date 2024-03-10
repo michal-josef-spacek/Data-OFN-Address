@@ -5,7 +5,8 @@ use warnings;
 
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.21 qw(check_array_object check_number check_regexp check_strings);
+use Mo::utils 0.22 qw(check_array_object check_length_fix check_number check_regexp
+	check_strings);
 use Readonly;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -207,6 +208,10 @@ sub BUILD {
 
 	# Check municipality_part_name.
 	check_array_object($self, 'municipality_part_name', 'Data::Text::Simple', 'Municipality part name');
+
+	# Check psc.
+	check_length_fix($self, 'psc', 5);
+	check_regexp($self, 'psc', qw{^\d+$});
 
 	# Check street.
 	check_regexp($self, 'street',

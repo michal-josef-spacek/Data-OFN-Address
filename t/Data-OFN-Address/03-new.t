@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 34;
+use Test::More 'tests' => 37;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -309,6 +309,39 @@ eval {
 };
 is($EVAL_ERROR, "Municipality part name isn't 'Data::Text::Simple' object.\n",
 	"Municipality part name isn't 'Data::Text::Simple' object (object).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'psc' => 'baddd',
+	);
+};
+is($EVAL_ERROR, "Parameter 'psc' does not match the specified regular expression.\n",
+	"Parameter 'psc' does not match the specified regular expression. (baddd).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'psc' => '1234',
+	);
+};
+is($EVAL_ERROR, "Parameter 'psc' has length different than '5'.\n",
+	"Parameter 'psc' has length different than '5'.(1234).");
+clean();
+
+# Test.
+$mock = Test::MockObject->new;
+eval {
+	Data::OFN::Address->new(
+		'psc' => '123456',
+	);
+};
+is($EVAL_ERROR, "Parameter 'psc' has length different than '5'.\n",
+	"Parameter 'psc' has length different than '5'. (123456).");
 clean();
 
 # Test.
