@@ -22,6 +22,7 @@ meta-spec:
 name: Data-OFN-Address
 no_index:
   directory:
+    - examples
     - inc
     - t
     - xt
