@@ -40,25 +40,36 @@ METHODS
 
     *       "address_place"
 
-            TODO
+            Czech address place IRI.
+
+            IRI has format
+            https://linked.cuzk.cz/resource/ruian/adresni-misto/ and unique
+            number on the end.
 
             It's optional.
 
     *       "address_place_code"
 
-            TODO
+            Czech address place numeric code. Same number as on the
+            "address_place" end.
 
             It's optional.
 
     *       "cadastral_area"
 
-            TODO
+            Czech address cadastral area IRI.
+
+            IRI has format
+            https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/ and
+            unique number on the end.
 
             It's optional.
 
     *       "cadastral_area_name"
 
-            TODO
+            Czech address cadastral area name(s). This name is in form of
+            reference to array of Data::Text::Simple instances with language
+            definition.
 
             It's optional.
 
@@ -66,7 +77,7 @@ METHODS
 
     *       "conscription_number"
 
-            TODO
+            Czech address consciption number.
 
             It's optional.
 

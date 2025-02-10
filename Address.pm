@@ -290,25 +290,34 @@ Constructor.
 
 =item * C<address_place>
 
-TODO
+Czech address place IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/adresni-misto/ and unique
+number on the end.
 
 It's optional.
 
 =item * C<address_place_code>
 
-TODO
+Czech address place numeric code.
+Same number as on the C<address_place> end.
 
 It's optional.
 
 =item * C<cadastral_area>
 
-TODO
+Czech address cadastral area IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/ and
+unique number on the end.
 
 It's optional.
 
 =item * C<cadastral_area_name>
 
-TODO
+Czech address cadastral area name(s).
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -316,7 +325,7 @@ Default value is [].
 
 =item * C<conscription_number>
 
-TODO
+Czech address consciption number.
 
 It's optional.
 
