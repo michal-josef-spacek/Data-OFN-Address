@@ -16,7 +16,7 @@ author_requires 'Test::Pod::Coverage' => 0;
 license 'bsd';
 name 'Data-OFN-Address';
 perl_version 5.008;
-readme_from 'Address.pm';
+readme_from 'lib/Data/OFN/Address.pm';
 recursive_author_tests('xt');
 requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
