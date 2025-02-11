@@ -19,6 +19,7 @@ perl_version 5.008;
 readme_from 'lib/Data/OFN/Address.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0;
+requires 'Data::Text::Simple' => 0;
 requires 'Error::Pure' => 0;
 requires 'Mo' => 0;
 requires 'Mo::utils' => 0.22;
