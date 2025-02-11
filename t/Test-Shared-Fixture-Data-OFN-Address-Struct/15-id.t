@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use Test::More 'tests' => 2;
+use Test::More 'tests' => 3;
 use Test::NoWarnings;
 use Test::Shared::Fixture::Data::OFN::Address::Struct;
 
@@ -9,9 +9,8 @@ use Test::Shared::Fixture::Data::OFN::Address::Struct;
 my $obj = Test::Shared::Fixture::Data::OFN::Address::Struct->new;
 is($obj->id, undef, 'Get id (undef - default).');
 
-# TODO
-## Test.
-#$obj = Test::Shared::Fixture::Data::OFN::Address::Struct->new(
-#	'id' => 10,
-#);
-#is($obj->id, 10, 'Get id (10).');
+# Test.
+$obj = Test::Shared::Fixture::Data::OFN::Address::Struct->new(
+	'id' => 10,
+);
+is($obj->id, 10, 'Get id (10).');

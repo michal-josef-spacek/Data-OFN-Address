@@ -5,7 +5,6 @@ TODO
 5. Real address with momc, momc_name to test.
 6. Real address with mop, mop_name to test.
 9. element_ruian to land_plot?
-11. Accept setting of id to fixture?
 12. Doc for fixtures with link to spec
 13.
 
@@ -25,4 +24,7 @@ OK [20240310] skim
 OK [20240311] skim
 
 10. Add fixture from spec?
-OK [20250212] skim
+OK [20250211] skim
+
+11. Accept setting of id to fixture?
+OK [20250211] skim
