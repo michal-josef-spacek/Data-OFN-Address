@@ -635,7 +635,7 @@ TODO
 
  new():
          From Mo::utils:
-                 Parameter 'id' must a number.
+                 Parameter 'id' must be a natural number.
                          Value: %s
 
 =head1 EXAMPLE
