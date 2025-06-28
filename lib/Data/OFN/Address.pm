@@ -254,29 +254,37 @@ Data::OFN::Address - Data object for OFN address.
  my $address_place = $obj->address_place;
  my $address_place_code = $obj->address_place_code;
  my $cadastral_area = $obj->cadastral_area;
- my $cadastral_area_name = $obj->cadastral_area_name;
+ my $cadastral_area_name_ar = $obj->cadastral_area_name;
  my $conscription_number = $obj->conscription_number;
  my $conscription_number_flag = $obj->conscription_number_flag;
  my $district = $obj->district;
- my $district_name = $obj->district_name;
+ my $district_name_ar = $obj->district_name;
  my $element_ruian = $obj->element_ruian;
  my $house_number = $obj->house_number;
  my $house_number_type = $obj->house_number_type;
  my $id = $obj->id;
  my $momc = $obj->momc;
- my $momc_name = $obj->momc_name;
+ my $momc_name_ar = $obj->momc_name;
  my $mop = $obj->mop;
- my $mop_name = $obj->mop_name;
+ my $mop_name_ar = $obj->mop_name;
  my $municipality = $obj->municipality;
- my $municipality_name = $obj->municipality_name;
+ my $municipality_name_ar = $obj->municipality_name;
  my $municipality_part = $obj->municipality_part;
- my $municipality_part_name = $obj->municipality_part_name;
+ my $municipality_part_name_ar = $obj->municipality_part_name;
  my $psc = $obj->psc;
  my $street = $obj->street;
- my $street_name = $obj->street_name;
- my $text = $obj->text;
+ my $street_name_ar = $obj->street_name;
+ my $text_ar = $obj->text;
  my $vusc = $obj->vusc;
- my $vusc_name = $obj->vusc_name;
+ my $vusc_name_ar = $obj->vusc_name;
+
+=head1 DESCRIPTION
+
+Immutable data object for OFN (Otevřené formální normy) representation of
+address in the Czech Republic.
+
+This object is actual with L<2020-07-01|https://ofn.gov.cz/adresy/2020-07-01/> version of
+OFN address standard.
 
 =head1 METHODS
 
@@ -290,7 +298,7 @@ Constructor.
 
 =item * C<address_place>
 
-Czech address place IRI.
+Address place IRI.
 
 IRI has format https://linked.cuzk.cz/resource/ruian/adresni-misto/ and unique
 number on the end.
@@ -299,23 +307,27 @@ It's optional.
 
 =item * C<address_place_code>
 
-Czech address place numeric code.
+Address place numeric code.
+
 Same number as on the C<address_place> end.
 
 It's optional.
 
 =item * C<cadastral_area>
 
-Czech address cadastral area IRI.
+Address cadastral area IRI.
 
 IRI has format https://linked.cuzk.cz/resource/ruian/katastralni-uzemi/ and
 unique number on the end.
 
 It's optional.
 
+Default value is undef.
+
 =item * C<cadastral_area_name>
 
-Czech address cadastral area name(s).
+Address cadastral area name(s).
+
 This name is in form of reference to array of L<Data::Text::Simple> instances
 with language definition.
 
@@ -325,25 +337,40 @@ Default value is [].
 
 =item * C<conscription_number>
 
-Czech address consciption number.
+Address consciption number.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<conscription_number_flag>
 
-TODO
+Address conscription number type.
+
+It's possible to set in case if C<conscription_number> is set. It's something
+like C<a> if this is defined in real number.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<district>
 
-TODO
+Address district IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/okres/ and
+unique number on the end.
 
 It's optional.
 
+Default value is undef.
+
 =item * C<district_name>
 
-TODO
+Address district name(s).
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -351,37 +378,73 @@ Default value is [].
 
 =item * C<element_ruian>
 
-TODO
+Address element IRI from the RÚIAN register.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/parcela/ and
+unique number on the end.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<house_number>
 
-TODO
+Address house number.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<house_number_type>
 
-TODO
+Address house number type.
+
+Possible term values are:
+
+=over
+
+=item * č.p.
+
+The building object descriptive number.
+
+=item * č.ev.
+
+The building registration number.
+
+=back
 
 It's optional.
+
+Default value is undef.
 
 =item * C<id>
 
-TODO
+Address id.
+
+This is not official identifier of address in the Czech Republic.
+It's used for internal identification like database.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<momc>
 
-TODO
+Address city district IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/momc/ and
+unique number on the end.
 
 It's optional.
 
+Default value is undef.
+
 =item * C<momc_name>
 
-TODO
+Address city district name(s).
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -389,59 +452,97 @@ Default value is [].
 
 =item * C<mop>
 
-TODO
+Municipal district in the capital city of Prague IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/mop/ and unique number
+on the end.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<mop_name>
 
-TODO
+Municipal district in the capital city of Prague name(s).
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
+
+Default value is [].
 
 =item * C<municipality>
 
-TODO
+Municipality or military district IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/obec/ and unique number on
+the end.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<municipality_name>
 
-TODO
+Municipality or military district name(s).
 
-Default value is [].
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
+
+Default value is [].
 
 =item * C<municipality_part>
 
-TODO
+Part of the village IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/cast-obce/ and unique
+number on the end.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<municipality_part_name>
 
-TODO
+Part of the village name(s).
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
+
+It's optional.
 
 Default value is [].
 
-It's optional.
-
 =item * C<psc>
 
-TODO
+Zip code.
+
+The form is 5 character length number.
 
 It's optional.
+
+Default value is undef.
 
 =item * C<street>
 
-TODO
+Street IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/ulice/ and unique number on
+the end.
 
 It's optional.
 
+Default value is undef.
+
 =item * C<street_name>
 
-TODO
+Street name.
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -449,7 +550,10 @@ Default value is [].
 
 =item * C<text>
 
-TODO
+Address text.
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -457,13 +561,21 @@ Default value is [].
 
 =item * C<vusc>
 
-TODO
+Higher territorial self-governing unit IRI.
+
+IRI has format https://linked.cuzk.cz/resource/ruian/vusc/ and unique number on
+the end.
 
 It's optional.
 
+Default value is undef.
+
 =item * C<vusc_name>
 
-TODO
+Higher territorial self-governing unit name(s).
+
+This name is in form of reference to array of L<Data::Text::Simple> instances
+with language definition.
 
 It's optional.
 
@@ -477,67 +589,89 @@ Returns instance of object.
 
  my $address_place = $obj->address_place;
 
-TODO
+Get address place IRI.
+
+Returns string with IRI.
 
 =head2 C<address_place_code>
 
  my $address_place_code = $obj->address_place_code;
 
-TODO
+Get address place numeric code.
+
+Returns number.
 
 =head2 C<cadastral_area>
 
  my $cadastral_area = $obj->cadastral_area;
 
-TODO
+Get address cadastral area IRI.
+
+Returns string with IRI.
 
 =head2 C<cadastral_area_name>
 
- my $cadastral_area_name = $obj->cadastral_area_name;
+ my $cadastral_area_name_ar = $obj->cadastral_area_name;
 
-TODO
+Get address cadastral area name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<conscription_number>
 
  my $conscription_number = $obj->conscription_number;
 
-TODO
+Get address consciption number.
+
+Returns number.
 
 =head2 C<conscription_number_flag>
 
  my $conscription_number_flag = $obj->conscription_number_flag;
 
-TODO
+Get address conscription number type.
+
+Returns string.
 
 =head2 C<district>
 
  my $district = $obj->district;
 
-TODO
+Get address district IRI.
+
+Returns string with IRI.
 
 =head2 C<district_name>
 
- my $district_name = $obj->district_name;
+ my $district_name_ar = $obj->district_name;
 
-TODO
+Get address district name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<element_ruian>
 
  my $element_ruian = $obj->element_ruian;
 
-TODO
+Get address element IRI from the RÚIAN register.
+
+Returns string with IRI.
 
 =head2 C<house_number>
 
  my $house_number = $obj->house_number;
 
-TODO
+Get address house number.
+
+Returns string.
 
 =head2 C<house_number_type>
 
  my $house_number_type = $obj->house_number_type;
 
-TODO
+Get address house number type.
+
+Returns string.
 
 =head2 C<id>
 
@@ -551,85 +685,113 @@ Returns number.
 
  my $momc = $obj->momc;
 
-TODO
+Get address city district IRI.
+
+Returns string with IRI.
 
 =head2 C<momc_name>
 
- my $momc_name = $obj->momc_name;
+ my $momc_name_ar = $obj->momc_name;
 
-TODO
+Get address city district name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<mop>
 
  my $mop = $obj->mop;
 
-TODO
+Get municipal district in the capital city of Prague IRI.
+
+Returns string with IRI.
 
 =head2 C<mop_name>
 
- my $mop_name = $obj->mop_name;
+ my $mop_name_ar = $obj->mop_name;
 
-TODO
+Get municipal district in the capital city of Prague name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<municipality>
 
  my $municipality = $obj->municipality;
 
-TODO
+Get municipality or military district IRI.
+
+Returns string with IRI.
 
 =head2 C<municipality_name>
 
- my $municipality_name = $obj->municipality_name;
+ my $municipality_name_ar = $obj->municipality_name;
 
-TODO
+Get municipality or military district name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<municipality_part>
 
  my $municipality_part = $obj->municipality_part;
 
-TODO
+Get part of the village IRI.
+
+Returns string with IRI.
 
 =head2 C<municipality_part_name>
 
- my $municipality_part_name = $obj->municipality_part_name;
+ my $municipality_part_name_ar = $obj->municipality_part_name;
 
-TODO
+Get part of the village name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<psc>
 
  my $psc = $obj->psc;
 
-TODO
+Get zip code.
+
+Returns number.
 
 =head2 C<street>
 
  my $street = $obj->street;
 
-TODO
+Get street IRI.
+
+Returns string with IRI.
 
 =head2 C<street_name>
 
- my $street_name = $obj->street_name;
+ my $street_name_ar = $obj->street_name;
 
-TODO
+Get street name.
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<text>
 
- my $text = $obj->text;
+ my $text_ar = $obj->text;
 
-TODO
+Get address text.
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head2 C<vusc>
 
  my $vusc = $obj->vusc;
 
-TODO
+Get higher territorial self-governing unit IRI.
+
+Returns string with IRI.
 
 =head2 C<vusc_name>
 
- my $vusc_name = $obj->vusc_name;
+ my $vusc_name_ar = $obj->vusc_name;
 
-TODO
+Get higher territorial self-governing unit name(s).
+
+Returns reference to array with L<Data::Text::Simple> instances.
 
 =head1 ERRORS
 

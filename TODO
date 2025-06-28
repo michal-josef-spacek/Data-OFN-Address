@@ -1,6 +1,5 @@
 TODO
 ====
-1. Finish doc.
 4. Check language in names.
 5. Real address with momc, momc_name to test.
 6. Real address with mop, mop_name to test.
@@ -28,3 +27,6 @@ OK [20250211] skim
 
 11. Accept setting of id to fixture?
 OK [20250211] skim
+
+1. Finish doc.
+OK [20250628] skim
