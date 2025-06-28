@@ -796,6 +796,7 @@ Returns reference to array with L<Data::Text::Simple> instances.
 =head1 ERRORS
 
  new():
+         TODO
          From Mo::utils:
                  Parameter 'id' must be a natural number.
                          Value: %s
