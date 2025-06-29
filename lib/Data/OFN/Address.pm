@@ -171,10 +171,6 @@ sub BUILD {
 	check_regexp($self, 'element_ruian',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/parcela/\d+$});
 
-	# Check district.
-	check_regexp($self, 'district',
-		qr{^https://linked\.cuzk\.cz/resource/ruian/okres/\d+$});
-
 	# Check house_number_type.
 	check_strings($self, 'house_number_type', \@HOUSE_NUMBER_TYPES);
 
