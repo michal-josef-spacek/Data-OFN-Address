@@ -796,9 +796,110 @@ Returns reference to array with L<Data::Text::Simple> instances.
 =head1 ERRORS
 
  new():
-         TODO
-         From Mo::utils:
-                 Parameter 'id' must be a natural number.
+         From Mo::utils::check_array_object():
+                 Cadastral area name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 District name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 MOMC name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 MOP name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 Municipality name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 Municipality part name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 Street name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 Text isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 VUSC name isn't 'Data::Text::Simple' object.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'cadastral_area_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'district_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'momc_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'mop_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'municipality_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'municipality_part_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'street_name' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'text' must be a array.
+                         Value: %s
+                         Reference: %s
+                 Parameter 'vusc_name' must be a array.
+                         Value: %s
+                         Reference: %s
+         From Mo::utils::check_length_fix():
+                 Parameter 'psc' has length different than '%s'.
+                         Value: %s
+         From Mo::utils::check_regexp():
+                 Parameter 'address_place' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/adresni-misto/\d+$)
+                 Parameter 'cadastral_area' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/katastralni-uzemi/\d+$)
+                 Parameter 'district' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/okres/\d+)
+                 Parameter 'element_ruian' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/parcela/\d+$)
+                 Parameter 'momc' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/momc/\d+$)
+                 Parameter 'mop' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/mop/\d+$)
+                 Parameter 'municipality' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/obec/\d+$)
+                 Parameter 'municipality_part' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/cast-obce/\d+$)
+                 Parameter 'psc' does not match the specified regular expression.
+                         String: %s
+                         Regexp: ^\d+$
+                 Parameter 'street' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/ulice/\d+$)
+                 Parameter 'vusc' does not match the specified regular expression.
+                         String: %s
+                         Regexp: (?^:^https://linked\.cuzk\.cz/resource/ruian/vusc/\d+$)
+         From Mo::utils::check_strings():
+                 Parameter 'house_number_type' must be one of defined strings.
+                         String: %s
+                         Possible strings: 'č.p.', 'č.ev.'
+         From Mo::utils::Number::check_positive_natural():
+                 Parameter 'address_place_code' must be a positive natural number.
+                         Value: %s
+                 Parameter 'conscription_number' must be a positive natural number.
+                         Value: %s
+                 Parameter 'house_number' must be a positive natural number.
+                         Value: %s
+                 Parameter 'id' must be a positive natural number.
                          Value: %s
 
 =head1 EXAMPLE

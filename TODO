@@ -5,7 +5,6 @@ TODO
 6. Real address with mop, mop_name to test.
 9. element_ruian to land_plot?
 12. Doc for fixtures with link to spec
-13. Finish ERRORS section in doc.
 14.
 
 Applied
@@ -31,3 +30,6 @@ OK [20250211] skim
 
 1. Finish doc.
 OK [20250628] skim
+
+13. Finish ERRORS section in doc.
+OK [20250705] skim
