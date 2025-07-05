@@ -6,7 +6,7 @@ use Data::Text::Simple;
 use English;
 use Error::Pure::Utils qw(clean);
 use Test::MockObject;
-use Test::More 'tests' => 37;
+use Test::More 'tests' => 38;
 use Test::NoWarnings;
 use Unicode::UTF8 qw(decode_utf8);
 
@@ -175,6 +175,16 @@ eval {
 };
 is($EVAL_ERROR, "Parameter 'element_ruian' does not match the specified regular expression.\n",
 	"Parameter 'element_ruian' does not match the specified regular expression.");
+clean();
+
+# Test.
+eval {
+	Data::OFN::Address->new(
+		'house_number' => 'bad',
+	);
+};
+is($EVAL_ERROR, "Parameter 'house_number' must be a positive natural number.\n",
+	"Parameter 'house_number' must be a positive natural number (bad).");
 clean();
 
 # Test.

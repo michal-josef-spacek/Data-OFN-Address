@@ -171,6 +171,9 @@ sub BUILD {
 	check_regexp($self, 'element_ruian',
 		qr{^https://linked\.cuzk\.cz/resource/ruian/parcela/\d+$});
 
+	# Check house_number.
+	check_positive_natural($self, 'house_number');
+
 	# Check house_number_type.
 	check_strings($self, 'house_number_type', \@HOUSE_NUMBER_TYPES);
 
