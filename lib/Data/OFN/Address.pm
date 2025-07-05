@@ -5,7 +5,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.28 qw(check_array_object check_length_fix check_number check_regexp
+use Mo::utils 0.31 qw(check_array_object check_length_fix check_number check_regexp
 	check_strings);
 use Mo::utils::Number qw(check_positive_natural);
 use Readonly;
