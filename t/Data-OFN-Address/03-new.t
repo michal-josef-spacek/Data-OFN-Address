@@ -102,8 +102,8 @@ eval {
 		'address_place_code' => 'bad',
 	);
 };
-is($EVAL_ERROR, "Parameter 'address_place_code' must be a number.\n",
-	"Parameter 'address_place_code' must be a number.");
+is($EVAL_ERROR, "Parameter 'address_place_code' must be a positive natural number.\n",
+	"Parameter 'address_place_code' must be a positive natural number (bad).");
 clean();
 
 # Test.
@@ -153,8 +153,8 @@ eval {
 		'conscription_number' => 'bad',
 	);
 };
-is($EVAL_ERROR, "Parameter 'conscription_number' must be a number.\n",
-	"Parameter 'conscription_number' must be a number.");
+is($EVAL_ERROR, "Parameter 'conscription_number' must be a positive natural number.\n",
+	"Parameter 'conscription_number' must be a positive natural number (bad).");
 clean();
 
 # Test.

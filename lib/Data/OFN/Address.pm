@@ -5,7 +5,7 @@ use warnings;
 
 use Error::Pure qw(err);
 use Mo qw(build default is);
-use Mo::utils 0.31 qw(check_array_object check_length_fix check_number check_regexp
+use Mo::utils 0.31 qw(check_array_object check_length_fix check_regexp
 	check_strings);
 use Mo::utils::Number qw(check_positive_natural);
 use Readonly;
@@ -139,7 +139,7 @@ sub BUILD {
 		qr{^https://linked\.cuzk\.cz/resource/ruian/adresni-misto/\d+$});
 
 	# Check address_place_code.
-	check_number($self, 'address_place_code');
+	check_positive_natural($self, 'address_place_code');
 
 	# Check cadastral_area.
 	check_regexp($self, 'cadastral_area',
@@ -150,7 +150,7 @@ sub BUILD {
 		'Cadastral area name');
 
 	# Check conscription_number.
-	check_number($self, 'conscription_number');
+	check_positive_natural($self, 'conscription_number');
 
 	# Check conscription_number_flag.
 	if (! defined $self->{'conscription_number'}
